@@ -15,6 +15,9 @@ public class Ball : MonoBehaviour
 
     private bool mAiming = false;
 
+    private bool t;
+    private bool t1;
+
     private void Start()
     {
         mRB = GetComponent<Rigidbody>();
@@ -42,5 +45,19 @@ public class Ball : MonoBehaviour
 
             mAiming = false;
         }
+
+
+        ////TEST CODE
+        //if (Input.GetKeyDown(KeyCode.P))
+        //{
+        //    EventSystem.SlideOutUI(UISlideOut.UIType.INGREDIENTS, t);
+        //    t = !t;
+        //}
+
+        //if (Input.GetKeyDown(KeyCode.O))
+        //{
+        //    EventSystem.SlideOutUI(UISlideOut.UIType.TRAY, t1);
+        //    t1 = !t1;
+        //}
     }
 }
