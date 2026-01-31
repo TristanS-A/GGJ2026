@@ -5,7 +5,7 @@ using UnityEngine;
 public class NarrativeManager : MonoBehaviour
 {
     [SerializeField] DialogueBox dialogueBox;
-    [SerializeField] List<NPCDialogueData> dialogueDatas;
+    //[SerializeField] List<NPCDialogueData> dialogueDatas;
 
     NPCDialogueData currentData;
     int currentOrder;
@@ -13,14 +13,28 @@ public class NarrativeManager : MonoBehaviour
     [SerializeField] float timeBetweenRamblings;
     int rambleIndex;
 
-    private void Start()
+    private void OnEnable()
     {
-        dialogueBox.WriteLine(dialogueDatas[2].orders[0].requestOrder);
+        EventSystem.OnStartNextOrder += SetNewOrder;
+        EventSystem.OnRateOrder += RateOrder;
+        EventSystem.OnRateShot += RateShot;
     }
 
-    public void SetNewOrder(int NPCIndex, int orderIndex)
+    private void OnDisable()
     {
-        currentData = dialogueDatas[NPCIndex];
+        EventSystem.OnStartNextOrder -= SetNewOrder;
+        EventSystem.OnRateOrder -= RateOrder;
+        EventSystem.OnRateShot -= RateShot;
+    }
+
+    private void Start()
+    {
+        //dialogueBox.WriteLine(dialogueDatas[2].orders[0].requestOrder);
+    }
+
+    public void SetNewOrder(NPCDialogueData currCustomer, int orderIndex)
+    {
+        currentData = currCustomer;
         currentOrder = orderIndex;
 
         dialogueBox.WriteLine(currentData.orders[currentOrder].requestOrder);
@@ -66,13 +80,15 @@ public class NarrativeManager : MonoBehaviour
 
     }
 
-    public void GoodShot()
+    public void RateShot(bool goodShot)
     {
-        dialogueBox.WriteLine(currentData.goodShot[Random.Range(0, currentData.goodShot.Count)]);
-    }
-
-    public void BadShot()
-    {
-        dialogueBox.WriteLine(currentData.badShot[Random.Range(0, currentData.badShot.Count)]);
+        if (goodShot)
+        {
+            dialogueBox.WriteLine(currentData.goodShot[Random.Range(0, currentData.goodShot.Count)]);
+        }
+        else
+        {
+            dialogueBox.WriteLine(currentData.badShot[Random.Range(0, currentData.badShot.Count)]);
+        }
     }
 }

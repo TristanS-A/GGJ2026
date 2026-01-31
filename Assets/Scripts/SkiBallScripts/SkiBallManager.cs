@@ -9,6 +9,11 @@ public class SkiBallManager : MonoBehaviour
     [SerializeField] private Transform mSkiballRackT;
     [SerializeField] private float mRackBallOffset = 1;
 
+    [SerializeField] private int mMinPeakScore = 3;
+    [SerializeField] private int mMinGoodScore = 2;
+    [SerializeField] private int mMinMidScore = 1;
+    [SerializeField] private int mMinBadScore = 0;
+
     private int mSkiballPoints = 0;
 
     private List<Ball> mBalls = new();
@@ -69,6 +74,25 @@ public class SkiBallManager : MonoBehaviour
         {
             //Signify serve tea
             int finalScore = mSkiballPoints * IngredientManager.Instance.IngredientChoicePoints;
+
+            OrderQuality orderQuality = OrderQuality.Bad;
+
+            if (finalScore >= mMinMidScore)
+            {
+                orderQuality = OrderQuality.Mid;
+
+                if (finalScore >= mMinGoodScore)
+                {
+                    orderQuality = OrderQuality.Good;
+
+                    if (finalScore >= mMinPeakScore)
+                    {
+                        orderQuality = OrderQuality.Peak;
+                    }
+                }
+            }
+
+            EventSystem.RateOrder(orderQuality);
             Debug.Log(finalScore);
             return;
         }
@@ -80,6 +104,15 @@ public class SkiBallManager : MonoBehaviour
 
     private void AddPoints(int pointsToAdd)
     {
+        if (pointsToAdd >= 2)
+        {
+            EventSystem.RateShot(true);
+        }
+        else
+        {
+            EventSystem.RateShot(false);
+        }
+
         mSkiballPoints += pointsToAdd;
     }
 }
