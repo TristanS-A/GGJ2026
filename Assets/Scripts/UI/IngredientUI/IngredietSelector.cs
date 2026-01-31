@@ -27,6 +27,9 @@ public class IngredietSelector : MonoBehaviour, IPointerEnterHandler, IPointerEx
     public void OnPointerEnter(PointerEventData eventData)
     {
         mHoveredOn = true;
+
+        IngredientManager.Instance.SetIngredientDescription(mIngredientType);
+
         if (!mSelected)
         {
             mImage.color = new Color(1, 1, 1, 0.5f);

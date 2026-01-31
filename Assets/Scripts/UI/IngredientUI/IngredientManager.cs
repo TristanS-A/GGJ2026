@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using static IngredietSelector;
 
@@ -8,7 +9,10 @@ public class IngredientManager : MonoBehaviour
 {
     [SerializeField] private GameObject m_IngredientOBJ;
     [SerializeField] private Transform m_Tray;
+    [SerializeField] private TextMeshProUGUI mIngrNameText;
+    [SerializeField] private TextMeshProUGUI mIngrDescritptionText;
     [SerializeField] private ScentIngredientHolder[] mScentToIngredients;
+    [SerializeField] private IngredientDescriptionHolder[] mIngredientToDescription;
     private List<TrayIngredient> mCurrIngredients = new();
 
     private static IngredientManager instance;
@@ -17,6 +21,7 @@ public class IngredientManager : MonoBehaviour
     private Scent mTargetScent = Scent.Winter;
 
     private Dictionary<Scent, List<IngredietSelector.IngredientType>> mScentToIngredientsMap = new();
+    private Dictionary<IngredientType, IngredientDescription> mIngredientToDescriptionMap = new();
 
     public static IngredientManager Instance {  get { return instance; } }
     public List<TrayIngredient> TrayIngredients {  get { return mCurrIngredients; } }
@@ -36,6 +41,20 @@ public class IngredientManager : MonoBehaviour
         public List<IngredietSelector.IngredientType> ingredients;
     }
 
+    [Serializable]
+    public struct IngredientDescriptionHolder
+    {
+        public IngredientType type;
+        public IngredientDescription description;
+    }
+
+    [Serializable]
+    public struct IngredientDescription
+    {
+        public string name;
+        public string description;
+    }
+
     private void Awake()
     {
         if (instance == null)
@@ -49,14 +68,19 @@ public class IngredientManager : MonoBehaviour
 
     private void Start()
     {
-        BuildMap();
+        BuildMaps();
     }
 
-    private void BuildMap()
+    private void BuildMaps()
     {
         for (int i = 0; i < mScentToIngredients.Length; i++)
         {
             mScentToIngredientsMap.Add(mScentToIngredients[i].scent, mScentToIngredients[i].ingredients);
+        }
+
+        for (int i = 0; i < mIngredientToDescription.Length; i++)
+        {
+            mIngredientToDescriptionMap.Add(mIngredientToDescription[i].type, mIngredientToDescription[i].description);
         }
     }
 
@@ -111,5 +135,11 @@ public class IngredientManager : MonoBehaviour
         }
 
         mIngredientChoicePoints = score;
+    }
+
+    public void SetIngredientDescription(IngredientType ingredientType)
+    {
+        mIngrNameText.text = mIngredientToDescriptionMap[ingredientType].name;
+        mIngrDescritptionText.text = mIngredientToDescriptionMap[ingredientType].description;
     }
 }
