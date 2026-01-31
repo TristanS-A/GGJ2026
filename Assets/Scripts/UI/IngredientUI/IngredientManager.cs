@@ -13,6 +13,7 @@ public class IngredientManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI mIngrDescritptionText;
     [SerializeField] private ScentIngredientHolder[] mScentToIngredients;
     [SerializeField] private IngredientDescriptionHolder[] mIngredientToDescription;
+    [SerializeField] private ScentDescriptionHolder[] mScentToDescription;
     private List<TrayIngredient> mCurrIngredients = new();
 
     private static IngredientManager instance;
@@ -22,6 +23,7 @@ public class IngredientManager : MonoBehaviour
 
     private Dictionary<Scent, List<IngredietSelector.IngredientType>> mScentToIngredientsMap = new();
     private Dictionary<IngredientType, IngredientDescription> mIngredientToDescriptionMap = new();
+    private Dictionary<Scent, string> mScentToDescriptionMap = new();
 
     public static IngredientManager Instance {  get { return instance; } }
     public List<TrayIngredient> TrayIngredients {  get { return mCurrIngredients; } }
@@ -55,6 +57,13 @@ public class IngredientManager : MonoBehaviour
         public string description;
     }
 
+    [Serializable]
+    public struct ScentDescriptionHolder
+    {
+        public Scent scent;
+        public string description;
+    }
+
     private void Awake()
     {
         if (instance == null)
@@ -81,6 +90,11 @@ public class IngredientManager : MonoBehaviour
         for (int i = 0; i < mIngredientToDescription.Length; i++)
         {
             mIngredientToDescriptionMap.Add(mIngredientToDescription[i].type, mIngredientToDescription[i].description);
+        }
+
+        for (int i = 0; i < mScentToDescription.Length; i++)
+        {
+            mScentToDescriptionMap.Add(mScentToDescription[i].scent, mScentToDescription[i].description);
         }
     }
 
@@ -141,5 +155,43 @@ public class IngredientManager : MonoBehaviour
     {
         mIngrNameText.text = mIngredientToDescriptionMap[ingredientType].name;
         mIngrDescritptionText.text = mIngredientToDescriptionMap[ingredientType].description;
+    }
+
+    public Scent GetClosestScentAndStrengthOnTray()
+    {
+        Scent scent = Scent.Winter;
+        int[] scentsCount = new int[Enum.GetValues(typeof(Scent)).Length];
+
+        foreach (TrayIngredient ingredient in mCurrIngredients)
+        {
+            for (int i = 0; i < scentsCount.Length; i++)
+            {
+                if (mScentToIngredientsMap.ContainsKey((Scent)i))
+                {
+                    if (mScentToIngredientsMap[(Scent)i].Contains(ingredient.IngredientType))
+                    {
+                        scentsCount[i]++;
+                    }
+                }
+            }
+        }
+
+        int min = -1;
+        int index = 0;
+        for (int i = 0; i < scentsCount.Length; i++)
+        {
+            if (scentsCount[i] >= min)
+            {
+                min = scentsCount[i];
+                index = i;
+            }
+        }
+
+        return (Scent)index;
+    }
+
+    public string GetScentDescription(Scent scent)
+    {
+        return mScentToDescriptionMap[scent];
     }
 }

@@ -10,6 +10,16 @@ public class CoinManager : MonoBehaviour
 
     public float timeBetweenSpawns = 0.1f;
 
+    private void OnEnable()
+    {
+        EventSystem.OnAddTotalBrewPoints += SpawnCoins;
+    }
+
+    private void OnDisable()
+    {
+        EventSystem.OnAddTotalBrewPoints -= SpawnCoins;
+    }
+
     // Update is called once per frame
     void Update()
     {

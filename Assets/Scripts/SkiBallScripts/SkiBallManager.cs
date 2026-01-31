@@ -93,7 +93,9 @@ public class SkiBallManager : MonoBehaviour
             }
 
             EventSystem.RateOrder(orderQuality);
+            StartCoroutine(Co_DelayNextCustomerTrigger());
             Debug.Log(finalScore);
+            EventSystem.AddTotalBrewPoints(finalScore);
             return;
         }
 
@@ -114,5 +116,11 @@ public class SkiBallManager : MonoBehaviour
         }
 
         mSkiballPoints += pointsToAdd;
+    }
+
+    private IEnumerator Co_DelayNextCustomerTrigger()
+    {
+        yield return new WaitForSeconds(7);
+        EventSystem.TriggerNextCustomer();
     }
 }

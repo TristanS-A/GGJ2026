@@ -14,6 +14,8 @@ public class DialogueBox : MonoBehaviour
     [SerializeField][Range(1, 5)] private int frequency = 2;
     private AudioClip currentTypeSound; // For different characters
 
+    private Coroutine mCurrCoroutine = null;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -78,7 +80,13 @@ public class DialogueBox : MonoBehaviour
     public void WriteLine(string line, AudioClip voiceSound = null)
     {
         currentTypeSound = (voiceSound != null) ? voiceSound : typeSound;
-        StartCoroutine(TypeLine(line));
+
+        if (mCurrCoroutine != null)
+        {
+            StopCoroutine(mCurrCoroutine);
+        }
+
+        mCurrCoroutine = StartCoroutine(TypeLine(line));
     }
 
 
