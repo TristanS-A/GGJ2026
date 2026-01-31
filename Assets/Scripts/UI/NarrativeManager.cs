@@ -16,7 +16,7 @@ public class NarrativeManager : MonoBehaviour
 
     private void Start()
     {
-        dialogueBox.WriteLine(dialogueDatas[2].orders[0].requestOrder);
+        dialogueBox.WriteLine(dialogueDatas[2].orders[0].requestOrder, dialogueDatas[2].voiceClip);
     }
 
     public void SetNewOrder(int NPCIndex, int orderIndex)
@@ -24,7 +24,7 @@ public class NarrativeManager : MonoBehaviour
         currentData = dialogueDatas[NPCIndex];
         currentOrder = orderIndex;
 
-        dialogueBox.WriteLine(currentData.orders[currentOrder].requestOrder);
+        dialogueBox.WriteLine(currentData.orders[currentOrder].requestOrder, currentData.voiceClip);
 
         rambleIndex = 0;
         Ramble();
@@ -32,6 +32,7 @@ public class NarrativeManager : MonoBehaviour
 
     public void RateOrder(OrderQuality quality)
     {
+        string text = "";
         switch (quality)
         {
             case OrderQuality.Bad:
@@ -47,6 +48,7 @@ public class NarrativeManager : MonoBehaviour
                 dialogueBox.WriteLine(currentData.orders[currentOrder].rateOrderPeak);
                 break;
         }
+        dialogueBox.WriteLine(text, currentData.voiceClip);
     }
 
     IEnumerator Ramble()
