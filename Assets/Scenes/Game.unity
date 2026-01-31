@@ -4414,7 +4414,20 @@ MonoBehaviour:
         in tea!!" '
   mScentToDescription:
   - scent: 15
-    description: Machina
+    description: 'Smells like... diesel fuel. Somewhat sulfurous. '
+  - scent: 1
+    description: Smells like... a barnyard. Fertilizer, but in a good way.
+  - scent: 12
+    description: Smells like... savory spice. Gin's Gers, Cori's Yanders, Pap's Rikuhs
+      and more.
+  - scent: 3
+    description: Smells like... wandering through a flower garden.
+  - scent: 6
+    description: Smells like... the rain hitting pavement. The sky before the astral
+      storm.
+  - scent: 5
+    description: Smells like... the warmth of human connection, with hints of Lave's
+      Ender.
 --- !u!1 &2109882268
 GameObject:
   m_ObjectHideFlags: 0
