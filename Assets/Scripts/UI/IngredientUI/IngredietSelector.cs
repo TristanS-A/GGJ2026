@@ -16,7 +16,9 @@ public class IngredietSelector : MonoBehaviour, IPointerEnterHandler, IPointerEx
         AGED_GREASE,
         CORN_SPICE,
         GROUND_HAY,
-        FOURTH_OPTION
+        ABANDONED_DEW,
+        UMBRELLA_LEAF,
+        SMILING_FLOWER
     }
 
     private void Start()
