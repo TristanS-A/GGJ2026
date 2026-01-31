@@ -19,7 +19,8 @@ public class UISlideOut : MonoBehaviour
     public enum UIType
     {
         INGREDIENTS,
-        TRAY
+        TRAY,
+        SCENT_DESCRIPTION
     }
 
     private void OnEnable()

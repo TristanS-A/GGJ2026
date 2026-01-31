@@ -63,7 +63,7 @@ public class NarrativeManager : MonoBehaviour
                 dialogueBox.WriteLine(currentData.orders[currentOrder].rateOrderPeak);
                 break;
         }
-        dialogueBox.WriteLine(text, currentData.voiceClip);
+        //dialogueBox.WriteLine(text, currentData.voiceClip);
     }
 
     IEnumerator Ramble()
