@@ -60,6 +60,8 @@ public class Ball : MonoBehaviour
             {
                 mAiming = true;
                 mStartClickPos = Input.mousePosition;
+
+                SkiballLine.instance.StartLine(gameObject);
             }
 
             if (mAiming && Input.GetMouseButtonUp(0))
@@ -82,6 +84,8 @@ public class Ball : MonoBehaviour
                     Debug.Log("Dynamic volume is " + dynamicVolume);
                     mAudioSource.PlayOneShot(throwSound, dynamicVolume);
                 }
+
+                SkiballLine.instance.EndLine();
 
                 mReadyToThrow = false;
                 StartCoroutine(Co_Delay());
