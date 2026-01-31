@@ -15,6 +15,8 @@ public class OrderDialogue
     [SerializeField] public string rateOrderMid;
     [SerializeField] public string rateOrderGood;
     [SerializeField] public string rateOrderPeak;
+
+    public IngredientManager.Scent OrderScent { get { return orderScent; } }
 }
 
 [CreateAssetMenu(menuName = "ScripableObjects/NPC")]

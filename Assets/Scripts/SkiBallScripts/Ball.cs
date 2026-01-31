@@ -109,7 +109,7 @@ public class Ball : MonoBehaviour
 
     private IEnumerator Co_Delay()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(6);
         EventSystem.CompletedBallThrow();
     }
 }
