@@ -285,8 +285,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: This is the description of the ingredient
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b3b3fe5c0e0377740bb95faa3c1feb48, type: 2}
+  m_sharedMaterial: {fileID: -2414792419538223555, guid: b3b3fe5c0e0377740bb95faa3c1feb48, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -419,8 +419,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Ingredient Name:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b3b3fe5c0e0377740bb95faa3c1feb48, type: 2}
+  m_sharedMaterial: {fileID: -2414792419538223555, guid: b3b3fe5c0e0377740bb95faa3c1feb48, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -530,8 +530,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -320, y: 168}
-  m_SizeDelta: {x: 320, y: 102.6}
+  m_AnchoredPosition: {x: -332.5782, y: 168}
+  m_SizeDelta: {x: 332.5781, y: 124.8976}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &115428169
 MonoBehaviour:
@@ -611,7 +611,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300002, guid: 56d84991286850f428b4e7df0cca7380, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -666,7 +666,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: -0.000068068504, y: 97.09998}
-  m_SizeDelta: {x: 320, y: 170}
+  m_SizeDelta: {x: 336.701, y: 185.7733}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &186463640
 MonoBehaviour:
@@ -688,7 +688,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 56d84991286850f428b4e7df0cca7380, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1201,7 +1201,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300002, guid: 56d84991286850f428b4e7df0cca7380, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1415,7 +1415,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -4.3}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &845609120
@@ -1440,8 +1440,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Test Smell
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b3b3fe5c0e0377740bb95faa3c1feb48, type: 2}
+  m_sharedMaterial: {fileID: -2414792419538223555, guid: b3b3fe5c0e0377740bb95faa3c1feb48, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1602,7 +1602,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 56d84991286850f428b4e7df0cca7380, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3105,6 +3105,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: NarrativeCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8160933360742526463, guid: 9a43dab3210599c41985ea58915a834f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8160933360742526463, guid: 9a43dab3210599c41985ea58915a834f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 149.39258
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3559,7 +3567,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -3.5}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1624927223
@@ -3584,8 +3592,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Brew
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b3b3fe5c0e0377740bb95faa3c1feb48, type: 2}
+  m_sharedMaterial: {fileID: -2414792419538223555, guid: b3b3fe5c0e0377740bb95faa3c1feb48, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3818,6 +3826,7 @@ MonoBehaviour:
   mBrewButton: {fileID: 1115935043}
   mSmellTestButton: {fileID: 205116576}
   mScentDescription: {fileID: 64733404}
+  mOmara: {fileID: 0}
 --- !u!1 &1769297414
 GameObject:
   m_ObjectHideFlags: 0
@@ -4104,8 +4113,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: This is the description of the ingredient
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b3b3fe5c0e0377740bb95faa3c1feb48, type: 2}
+  m_sharedMaterial: {fileID: -2414792419538223555, guid: b3b3fe5c0e0377740bb95faa3c1feb48, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4535,6 +4544,7 @@ MonoBehaviour:
     ingredients: 0500000004000000
   - scent: 0
     ingredients: 0000000004000000
+  mIngredientsToScent: []
   mIngredientToDescription:
   - type: 0
     description:
