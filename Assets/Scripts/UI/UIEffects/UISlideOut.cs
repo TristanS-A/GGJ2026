@@ -11,6 +11,8 @@ public class UISlideOut : MonoBehaviour
     [SerializeField] private float mTotalSlideTime;
     [SerializeField] private AnimationCurve mSlideCurve;
 
+    Coroutine mCurrCoroutine = null;
+
     private Vector2 mT0;
     private Vector2 mT1;
 
@@ -39,7 +41,13 @@ public class UISlideOut : MonoBehaviour
         // (otherwise would use UI manager for something like this)
         if (type == mUIType)
         {
-            StartCoroutine(Co_Slide(slidingIn));
+            if (mCurrCoroutine != null)
+            {
+                mCurrTime = 0;
+                StopCoroutine(mCurrCoroutine);
+            }
+
+            mCurrCoroutine = StartCoroutine(Co_Slide(slidingIn));
         }
     }
 

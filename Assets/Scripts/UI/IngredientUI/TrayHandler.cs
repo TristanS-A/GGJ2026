@@ -10,6 +10,8 @@ public class TrayHandler : MonoBehaviour
     [SerializeField] private Button mSmellTestButton;
     [SerializeField] private TextMeshProUGUI mScentDescription;
 
+    Coroutine mCurrCoroutine = null;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,7 +36,13 @@ public class TrayHandler : MonoBehaviour
         mScentDescription.text = IngredientManager.Instance.GetScentDescription(closestScent);
 
         EventSystem.SlideOutUI(UISlideOut.UIType.SCENT_DESCRIPTION, true);
-        StartCoroutine(Co_SlideScentDescriptionBack());
+
+        if (mCurrCoroutine != null)
+        {
+            StopCoroutine(mCurrCoroutine);
+        }
+
+        mCurrCoroutine = StartCoroutine(Co_SlideScentDescriptionBack());
     }
 
     private IEnumerator Co_SlideScentDescriptionBack()
