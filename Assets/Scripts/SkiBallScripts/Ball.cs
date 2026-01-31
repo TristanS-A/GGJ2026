@@ -11,7 +11,7 @@ public class Ball : MonoBehaviour
 
     [Header("Audio")]
     [SerializeField] private AudioClip throwSound;
-    [Range(0, 1)][SerializeField] private float volume = 0.5f;
+    [Range(0, 6)][SerializeField] private float volume = 0.5f;
 
     private Vector3 mStartClickPos = Vector3.zero;
     private Vector3 mThrowDirection = Vector3.zero;
@@ -75,18 +75,17 @@ public class Ball : MonoBehaviour
 
                 mAiming = false;
 
+                // Play the throw sound when released.
+                if (throwSound != null)
+                {
+                    float dynamicVolume = Mathf.Clamp(power / 500f, 0.2f, 1.0f) * volume;
+                    Debug.Log("Dynamic volume is " + dynamicVolume);
+                    mAudioSource.PlayOneShot(throwSound, dynamicVolume);
+                }
+
                 mReadyToThrow = false;
                 StartCoroutine(Co_Delay());
             }
-
-            // Play the throw sound when released.
-            if (throwSound != null)
-            {
-                float dynamicVolume = Mathf.Clamp(power / 500f, 0.2f, 1.0f) * volume;
-                mAudioSource.PlayOneShot(throwSound, dynamicVolume);
-            }
-
-            // mAiming = false; not sure if this is placed right after merge
         }
 
 

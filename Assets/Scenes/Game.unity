@@ -1672,6 +1672,10 @@ MonoBehaviour:
   mSkiballStartT: {fileID: 1813840030}
   mSkiballRackT: {fileID: 1502957812}
   mRackBallOffset: 2
+  mMinPeakScore: 3
+  mMinGoodScore: 2
+  mMinMidScore: 1
+  mMinBadScore: 0
 --- !u!1 &1115935041
 GameObject:
   m_ObjectHideFlags: 0
@@ -4035,15 +4039,51 @@ MonoBehaviour:
   mIngrNameText: {fileID: 73542551}
   mIngrDescritptionText: {fileID: 2005855452}
   mScentToIngredients:
-  - scent: 0
-    ingredients: 0000000001000000
+  - scent: 15
+    ingredients: 0000000002000000
   - scent: 1
+    ingredients: 0200000001000000
+  - scent: 12
     ingredients: 0000000001000000
+  - scent: 3
+    ingredients: 0300000005000000
+  - scent: 6
+    ingredients: 0300000004000000
+  - scent: 5
+    ingredients: 0500000004000000
+  - scent: 0
+    ingredients: 0000000004000000
   mIngredientToDescription:
   - type: 0
     description:
       name: Aged Grease
-      description: Something something
+      description: 'This grease has been left to age for multiple years, resulting
+        in a savory and industrial taste. '
+  - type: 1
+    description:
+      name: Corn Spice
+      description: The spice infused into this corn makes it a highly sought after
+        ingredient for any meal.
+  - type: 2
+    description:
+      name: Oily Hay Ball
+      description: The hay in this ball acts as a fuel source for the oil to burn.
+        Favorite treat of robot cows.
+  - type: 3
+    description:
+      name: Abandoned Dew
+      description: This dew used to appear every morning on a bed of Hye Drangeas.
+        Now that they're gone, you can put it in tea!
+  - type: 4
+    description:
+      name: Umbrella Leaf
+      description: Good for when you want to show your friends that the weather's
+        nice, even when it rains.
+  - type: 5
+    description:
+      name: Smiling Flower
+      description: '"It''s me! I''m a... Smooling Frond! Oh please please put me
+        in tea!!" '
 --- !u!1 &2109882268
 GameObject:
   m_ObjectHideFlags: 0
