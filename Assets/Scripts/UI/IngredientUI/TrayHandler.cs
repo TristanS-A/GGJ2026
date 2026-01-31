@@ -9,6 +9,7 @@ public class TrayHandler : MonoBehaviour
     [SerializeField] private Button mBrewButton;
     [SerializeField] private Button mSmellTestButton;
     [SerializeField] private TextMeshProUGUI mScentDescription;
+    [SerializeField] private OVRConfig mOmara;
 
     Coroutine mCurrCoroutine = null;
 
@@ -42,6 +43,8 @@ public class TrayHandler : MonoBehaviour
             StopCoroutine(mCurrCoroutine);
         }
 
+        mOmara.StartScent(closestScent);
+        //mOmara.transform.position = Camera.main.transform.position;
         mCurrCoroutine = StartCoroutine(Co_SlideScentDescriptionBack());
     }
 
@@ -49,5 +52,7 @@ public class TrayHandler : MonoBehaviour
     {
         yield return new WaitForSeconds(5);
         EventSystem.SlideOutUI(UISlideOut.UIType.SCENT_DESCRIPTION, false);
+        //mOmara.transform.position = mOmara.transform.position + Vector3.up * -30;
+        mOmara.StopScent();
     }
 }

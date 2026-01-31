@@ -22,7 +22,8 @@ public class UISlideOut : MonoBehaviour
     {
         INGREDIENTS,
         TRAY,
-        SCENT_DESCRIPTION
+        SCENT_DESCRIPTION,
+        OMARA_POP_UP
     }
 
     private void OnEnable()
@@ -56,7 +57,6 @@ public class UISlideOut : MonoBehaviour
         mCurrTime += Time.deltaTime;
 
         float t = mCurrTime / mTotalSlideTime;
-
 
         transform.localPosition = Vector2.Lerp(mT0, mT1, mSlideCurve.Evaluate(t));
 
