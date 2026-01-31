@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92abb820a28843142bb0828c9e28e73e, type: 3}
+  m_Name: SadFrog
+  m_EditorClassIdentifier: 
+  orders:
+  - orderScent: 6
+    requestOrder: Oh... you're here. Do you... serve tea? I guess I can have some.
+      Do you have anything... um... <color="blue">blue</color>?
+    ramblings:
+    - You know. <color="blue">Blue</color>. Like... have you ever seen those videos...
+      of the rain... being... sad?
+    - I watch lots of... videos. The audio quality is like... rain from a gutter...
+      because of my... teeth. They're also <color="blue">blue</color>.
+    - The forecast today said it was going to rain towards the <color="blue">blue</color>
+      moon. But it's raining towards the <color="blue">Tblue</color> sun. Awww...
+    - Some people... don't really like <color=blue">blue</color>. But, I am <color=blue">blue</color>.
+      The rain's <color=blue">blue</color>. My teeth are <color=blue">blue</color>.
+      You just gotta have <color=blue">blue</color> sometimes.
+    rateOrderBad: Oh... this makes me feel... <color=red">red</color>.
+    rateOrderMid: Ahm.... mmm... I feel... <color=yellow">yellow</color>,. That's
+      different.
+    rateOrderGood: Oh, this is nice. I'm feeling... <color=green">Green</color>.
+      It's not easy, being <color=green">green</color>.
+    rateOrderPeak: <color=blue">Blue</color>. It's so... <color=blue">blue</color>.
+      Thank you.
+  - orderScent: 5
+    requestOrder: Hey... it's you. ...I need friends. ...Do you have any tea that
+      tastes like friends?
+    ramblings:
+    - 'I had some good friends, once. They really liked... Lave''s Ender. '
+    - Actually, that one guy... he liked... Eye's Biscuits. But that's maybe not
+      exactly what I was thinking of.
+    - I hope you have lots of friends. I was wondering... do you have any... to spare?
+    - Well... if you put them in the tea... does that still count? Friends, I mean.
+    rateOrderBad: Oh... I think my social status just went down...
+    rateOrderMid: This tastes like... one friend.
+    rateOrderGood: This is... mmmm... one, two... a few friends. I like it.
+    rateOrderPeak: 'It''s like... an entire friend group... in my heart. '
+  goodShot:
+  - Oh, that looked right... I think it was good...
+  - Wow, that's tea-rific! ...Oh. Was that not funny? Oh....
+  - That looks very... hoppy. Oh. I mean. that makes me... hoppy...
+  badShot:
+  - It's okay.... you tried your best...
+  - Now it's going where the rain goes....
+  - I get launched into space like that sometimes.....

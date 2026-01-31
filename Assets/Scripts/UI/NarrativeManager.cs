@@ -14,6 +14,11 @@ public class NarrativeManager : MonoBehaviour
     [SerializeField] float timeBetweenRamblings;
     int rambleIndex;
 
+    private void Start()
+    {
+        dialogueBox.WriteLine(dialogueDatas[2].orders[0].requestOrder);
+    }
+
     public void SetNewOrder(int NPCIndex, int orderIndex)
     {
         currentData = dialogueDatas[NPCIndex];

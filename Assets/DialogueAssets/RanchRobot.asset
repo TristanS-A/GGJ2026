@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92abb820a28843142bb0828c9e28e73e, type: 3}
+  m_Name: RanchRobot
+  m_EditorClassIdentifier: 
+  orders:
+  - orderScent: 15
+    requestOrder: Howdy there Barrtender. Gimme'uh good'ol robot's delight. Shot-a-fuel.
+      You know.
+    ramblings:
+    - Though I guess you wouldn't know, on account-a bein' Some Guy 'n all. Somethin'
+      fer the motors, see?
+    - 'Now, it''s not fer me. It''s fer my robo-cow, Bessie. Keeps the wheels Greased
+      ''n all. '
+    - She's a good one, that Bessie. This tea'll make that milk a lot more... Combustible,
+      see?
+    - Now Bessie's tellin' me this is th' scent a'the City, but I think it's th'
+      Frontier.
+    rateOrderBad: Mmm. Oh. Yes. Maybe I'll... keep this one t' myself.
+    rateOrderMid: I think Bessie'll have a nice taste-a this.
+    rateOrderGood: Deeee-licious! Good stuff, pardner. Bessie sends 'er thanks.
+    rateOrderPeak: This' boutta be the TALK-A-THA-TOWN! Bessie's ganna Love it.
+  - orderScent: 1
+    requestOrder: 'Hey there Barrtender. Lookin'' fer a drink fer me, y''know? Taste-a
+      tha Range. '
+    ramblings:
+    - You ever been out there, t' the Range? Bessie loves it. All natural, fresh
+      country stuff.
+    - Now, see, Bessie loves the taste'uh'the Fer-til-Izer, but seen's that's a beam
+      I can only taste it in a nice tea.
+    - Not a lotta tea out there. Real commodity you got here, you know. Th' Range's
+      got that earthy stuff, but not its pleasantries.
+    - So that's why I gotta get some fer m'self every once 'n a while. But gotta
+      keep it more special 'n good old Bessie's hay, yeah?
+    rateOrderBad: Oh. Uh. Imma let Bessie try this one.
+    rateOrderMid: Mmmmmmm-hm. The taste 'a the Range.
+    rateOrderGood: Hooooo-ee, that's good. Oh yeah.
+    rateOrderPeak: This is the STUFF! Can I getta barrel ofit t' go?
+  goodShot:
+  - Good shootin'!
+  - Dead center!
+  - A frontier legend!
+  badShot:
+  - Think that'll richochet?
+  - What're you shootin' for, my circuits?
+  - Y' can lead a ball t' water...

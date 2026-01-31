@@ -33,9 +33,25 @@ public class DialogueBox : MonoBehaviour
 
     IEnumerator TypeLine(string line)
     {
-        foreach (char c in line.ToCharArray())
+        char[] chars = line.ToCharArray();
+
+        string textToDisplay = "";
+        bool updateLocked = false;
+
+        for (int i = 0; i < chars.Length; i++)
         {
-            textComponent.text += c;
+            textToDisplay += chars[i];
+
+            if (chars[i] == '<')
+                updateLocked = true;
+            else if (chars[i] == '>')
+                updateLocked = false;
+
+            if (!updateLocked)
+            {
+                textComponent.text = textToDisplay;
+            }
+
             yield return new WaitForSeconds(textSpeed);
         }
     }
