@@ -35,6 +35,9 @@ public class CustomerManager : MonoBehaviour
         int orderIndex = UnityEngine.Random.Range(0, mCustomers[mCurrCustomerIndex].orders.Count);
         EventSystem.StartNextOrder(mCustomers[mCurrCustomerIndex], orderIndex);
 
+        IngredientManager.Instance.SetTargetScent(mCustomers[mCurrCustomerIndex].orders[orderIndex].OrderScent);
+        Debug.Log(mCustomers[mCurrCustomerIndex].orders[orderIndex].OrderScent);
+
         EventSystem.SlideOutUI(UISlideOut.UIType.INGREDIENTS, true);
         EventSystem.SlideOutUI(UISlideOut.UIType.TRAY, true);
     }

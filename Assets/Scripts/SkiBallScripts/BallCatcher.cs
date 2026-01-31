@@ -11,6 +11,7 @@ public class BallCatcher : MonoBehaviour
         Ball ballScript = other.gameObject.GetComponent<Ball>();
         if (ballScript != null && !ballScript.HasGottenPoints)
         {
+            Debug.Log(mScoreValue);
             ballScript.HasGottenPoints = true;
             EventSystem.AddSkiBallPoints(mScoreValue);
         }

@@ -20,7 +20,7 @@ public class IngredientManager : MonoBehaviour
     private static IngredientManager instance;
 
     private int mIngredientChoicePoints = 0;
-    private Scent mTargetScent = Scent.Winter;
+    private Scent mTargetScent = Scent.Barnyard;
 
     private Dictionary<Scent, List<IngredietSelector.IngredientType>> mScentToIngredientsMap = new();
     private Dictionary<IngredientType, IngredientDescription> mIngredientToDescriptionMap = new();
@@ -209,5 +209,14 @@ public class IngredientManager : MonoBehaviour
     public string GetScentDescription(Scent scent)
     {
         return mScentToDescriptionMap[scent];
+    }
+
+    public void ResetTray()
+    {
+        for (int i = 0; i < mCurrIngredients.Count; i++)
+        {
+            RemoveIngredient(mCurrIngredients[i].IngredientType);
+            i--;
+        }
     }
 }
