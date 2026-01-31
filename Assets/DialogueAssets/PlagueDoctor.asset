@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92abb820a28843142bb0828c9e28e73e, type: 3}
+  m_Name: PlagueDoctor
+  m_EditorClassIdentifier: 
+  orders:
+  - orderScent: 12
+    requestOrder: Oh. Oh, you're here! Good, yes... Goood. Now, I must have some...
+      Spice, if you will. Keep it on the down low!
+    ramblings:
+    - Yes, yes, you know about spice, right? And what goes in it? You're a competent
+      little bartender, aren't you?
+    - 'Unless, of course, you mean to tell me you DON''T know about... well, we shouldn''t
+      speak so publicly, hmmheehee. '
+    - Yes, let's keep this our little secret. Just you and me. And the spice. It's
+      my favorite kind of tea, you know? For... well... reasons.
+    - That spice... oh, you can do it, can't you? Hee... I believe in you! It's so...
+      It's so... It's so... ...... delicious.
+    rateOrderBad: Pthbl. Mm. Yes. This contains... Something, in it. I'm sure you
+      did that much!
+    rateOrderMid: Ah. The taste of spice. I am... somewhat sated.
+    rateOrderGood: Hee hee... oh yes... this is delectable. You do a good job, yes,
+      yes, yeees....
+    rateOrderPeak: Hee hee hee! Oh, my cravings! They are satisfied! Good good -
+      no - great great! Hee hee.
+  - orderScent: 3
+    requestOrder: Oh, hello there. Yes, I would like to ask for something NORMAL.
+      You know, NORMAL. What's NORMAL? Hmm... Flowers, I think.
+    ramblings:
+    - Yes, everyone is always talking to me about those... Eye Biscuits. Or Lave's
+      Ender. Nono. I must have something more NORMAL.
+    - What do you think, those flowers? Yes yes, good good. Have you picked a nice
+      one yet?
+    - Any flower will do, hmm. Hee hee... Something adjacent, even. Let's just raise
+      ABSOLUTELY NO SUSPICIONS with this one, friendy!
+    - Flowers, you see, they make me look nice. Us look nice. It's not like there's
+      anything wrong about them! hahaheehee!
+    rateOrderBad: Mmmm. MMMM... I must consult the... NORMAL POLICE. About this NORMAL
+      TEA.
+    rateOrderMid: Oh yes, this is veeeery NORMAL! Good work!
+    rateOrderGood: Heehoo, heeho, yes, yes, yes! I can appreciate this, mmm.
+    rateOrderPeak: What. A. Concoction! Oh, yes, my friend. Truly, you are quite
+      the alchemist!
+  goodShot:
+  - The bigger the explosion, the better the alchemist! Or astounding success, in
+    your case.
+  - 'Yes, this level of precision.... it will do. Very good. Very well. Carry on. '
+  - Don't draw too much attention to yourself with all of this success! Haha. ....I'm
+    not kidding please do that worse next time
+  badShot:
+  - The bigger the explosion, the better the alchemist! Or horrendous failure, in
+    your case.
+  - Please, please, try again! And quick! Let's not let me be seen here........ with
+    your failure, is what I'm talking about. Yes, hmm.
+  - Oh, that was just the wrong ingredient. I'm sure you didn't actually want that
+    in there? Yes? Yes! Yes.

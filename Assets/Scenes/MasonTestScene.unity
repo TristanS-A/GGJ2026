@@ -179,7 +179,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: New TextNew TextNew TextNew TextNew TextNew TextNew TextNew TextNew TextNew
+    TextNew TextNew TextNew Text
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -206,8 +207,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -381,9 +382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 46722593}
-  lines:
-  - Excuse me for... dropping in.
-  textSpeed: 0.1
+  textSpeed: 0.05
 --- !u!114 &1389054451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -676,26 +675,14 @@ GameObject:
   - component: {fileID: 2021121432}
   - component: {fileID: 2021121431}
   - component: {fileID: 2021121430}
-  - component: {fileID: 2021121429}
+  - component: {fileID: 2021121434}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: NarrativeCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2021121429
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2021121428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11fffcf89ee9ca645930e399dbaef51f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2021121430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -779,6 +766,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &2021121434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2021121428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a80497c1284375b4788021392e7739ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueBox: {fileID: 1389054450}
+  dialogueDatas:
+  - {fileID: 11400000, guid: 9858cbe680bced34cac2087a5b89ccfe, type: 2}
+  - {fileID: 11400000, guid: a85b39cc808c39341a62821bc0410b94, type: 2}
+  - {fileID: 11400000, guid: 489ff431ea4f89e4fb3a2a8e15bbda7d, type: 2}
+  timeBetweenRamblings: 0.05
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
