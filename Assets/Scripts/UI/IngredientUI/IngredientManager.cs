@@ -22,6 +22,9 @@ public class IngredientManager : MonoBehaviour
     private int mIngredientChoicePoints = 0;
     private Scent mTargetScent = Scent.Barnyard;
 
+    public static Action OnAddSuccess;
+    public static Action OnAddError;
+
     private Dictionary<Scent, List<IngredietSelector.IngredientType>> mScentToIngredientsMap = new();
     private Dictionary<IngredientType, IngredientDescription> mIngredientToDescriptionMap = new();
     private Dictionary<IngredientType, Scent> mIngredientsToScentMap = new();

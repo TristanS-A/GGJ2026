@@ -13,6 +13,20 @@ public class TrayHandler : MonoBehaviour
 
     Coroutine mCurrCoroutine = null;
 
+    [Header("Audio Settings")]
+    [SerializeField] private AudioClip clickSound;
+    [SerializeField, Range(0f, 1f)] private float clickVolume = 0.5f;
+    private AudioSource mAudioSource;
+
+    private void Awake()
+    {
+        mAudioSource = GetComponent<AudioSource>();
+        if (mAudioSource == null)
+        {
+            mAudioSource = gameObject.AddComponent<AudioSource>();
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +36,8 @@ public class TrayHandler : MonoBehaviour
 
     private void Brew()
     {
+        if (clickSound != null) mAudioSource.PlayOneShot(clickSound, clickVolume);
+
         EventSystem.SlideOutUI(UISlideOut.UIType.INGREDIENTS, false);
         EventSystem.SlideOutUI(UISlideOut.UIType.TRAY, false);
 
@@ -32,6 +48,8 @@ public class TrayHandler : MonoBehaviour
 
     private void SmellTest()
     {
+        if (clickSound != null) mAudioSource.PlayOneShot(clickSound, clickVolume);
+
         IngredientManager.Scent closestScent = IngredientManager.Instance.GetClosestScentAndStrengthOnTray();
 
         mScentDescription.text = IngredientManager.Instance.GetScentDescription(closestScent);
