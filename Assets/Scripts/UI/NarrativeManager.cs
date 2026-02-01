@@ -54,6 +54,11 @@ public class NarrativeManager : MonoBehaviour
 
     public void RateOrder(OrderQuality quality)
     {
+        if (rambleRoutine != null)
+        {
+            StopCoroutine(rambleRoutine);
+        }
+
         string text = "";
         switch (quality)
         {

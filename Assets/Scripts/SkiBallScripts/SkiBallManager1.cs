@@ -1,13 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SkiBallManager : MonoBehaviour
+public class SkiBallManager1 : MonoBehaviour
 {
-    [SerializeField] private GameObject mSkiballOBJ;
     [SerializeField] private Transform mSkiballStartT;
     [SerializeField] private Transform mSkiballRackT;
     [SerializeField] private float mRackBallOffset = 1;
+
+    [SerializeField] private IngredientToBallHolder[] mIngredientsToSkiBall;
+    private Dictionary<IngredietSelector.IngredientType, GameObject> mIngredientToBallMap = new();
 
     [SerializeField] private int mMinPeakScore = 3;
     [SerializeField] private int mMinGoodScore = 2;
@@ -25,6 +28,13 @@ public class SkiBallManager : MonoBehaviour
 
     private IngredietSelector.IngredientType mIngredietType;
 
+    [Serializable]
+    public struct IngredientToBallHolder
+    {
+        public IngredietSelector.IngredientType ingredientType;
+        public GameObject ballObject;
+    }
+
     public IngredietSelector.IngredientType IngredientType {  get { return mIngredietType; } }
 
     private void Awake()
@@ -34,6 +44,8 @@ public class SkiBallManager : MonoBehaviour
         {
             audioSource = gameObject.AddComponent<AudioSource>();
         }
+
+        BuildMap();
     }
 
     private void OnEnable()
@@ -50,6 +62,14 @@ public class SkiBallManager : MonoBehaviour
         EventSystem.OnAddSkiballPoints -= AddPoints;
     }
 
+    private void BuildMap()
+    {
+        for (int i = 0; i < mIngredientsToSkiBall.Length; i++)
+        {
+            mIngredientToBallMap.Add(mIngredientsToSkiBall[i].ingredientType, mIngredientsToSkiBall[i].ballObject);
+        }
+    }
+
     private void StartSkiball(List<TrayIngredient> ingredients)
     {
         float offset = 0;
@@ -59,14 +79,14 @@ public class SkiBallManager : MonoBehaviour
             Ball ballScript;
             if (i == 0)
             {
-                currSkiball = Instantiate(mSkiballOBJ, mSkiballStartT);
+                currSkiball = Instantiate(mIngredientToBallMap[ingredients[i].IngredientType], mSkiballStartT);
                 ballScript = currSkiball.GetComponent<Ball>();
                 ballScript.IngredientType = mIngredietType;
                 ballScript.SetReadyToThrow();
             }
             else
             {
-                currSkiball = Instantiate(mSkiballOBJ, mSkiballRackT);
+                currSkiball = Instantiate(mIngredientToBallMap[ingredients[i].IngredientType], mSkiballRackT);
                 currSkiball.transform.position += currSkiball.transform.forward * offset;
                 offset += mRackBallOffset;
                 ballScript = currSkiball.GetComponent<Ball>();
@@ -126,8 +146,29 @@ public class SkiBallManager : MonoBehaviour
             return;
         }
 
+        StartCoroutine(Co_SlideBall());
+    }
+
+    private IEnumerator Co_SlideBall()
+    {
+        Vector3 ogPos = mBalls[0].transform.position;
+        Vector3 endPos = mSkiballStartT.position;
+
+        mBalls[0].gameObject.GetComponent<TrailRenderer>().enabled = false;
+
+        float currTime = 0;
+        float totalTime = 0.2f;
+
+        while (currTime / totalTime < 1)
+        {
+            currTime += Time.deltaTime;
+            mBalls[0].transform.position = Vector3.Lerp(ogPos, endPos, currTime / totalTime);
+            yield return null;
+        }
+
+        mBalls[0].gameObject.GetComponent<TrailRenderer>().enabled = true;
+
         //Get next ball ready to throw
-        mBalls[0].transform.position = mSkiballStartT.position;
         mBalls[0].SetReadyToThrow();
     }
 

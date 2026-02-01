@@ -9,7 +9,9 @@ public class BallCatcher : MonoBehaviour
     {
         TOP,
         MIDDLE,
-        BOTTOM
+        BOTTOM,
+        MISSED,
+        OVER_THE_COUNTER
     }
 
     [SerializeField] private int mScoreValue = 1;
