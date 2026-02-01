@@ -23,7 +23,9 @@ public class OrderDialogue
 public class NPCDialogueData : ScriptableObject
 {
     [SerializeField] public List<OrderDialogue> orders;
+    [SerializeField] public List<string> greatShot;
     [SerializeField] public List<string> goodShot;
+    [SerializeField] public List<string> midShot;
     [SerializeField] public List<string> badShot;
     [SerializeField] public AudioClip voiceClip;
 }
