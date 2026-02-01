@@ -38,26 +38,29 @@ public class TeaPotShake : MonoBehaviour
     {
         Debug.Log(levelToShake);
 
+        if (levelToShake == BallCatcher.TeapotLevel.MISSED || levelToShake == BallCatcher.TeapotLevel.OVER_THE_COUNTER)
+        {
+            return;
+        }
+
         if (mTeapotAnimator != null)
         {
             mTeapotAnimator.enabled = true;
         }
-        mRotationEnabled = false;
 
+        switch (levelToShake)
         {
-            switch (levelToShake)
-            {
-                case BallCatcher.TeapotLevel.TOP:
-                    //StartCoroutine(Co_Shake(mTopLevel));
-                    mTeapotAnimator.SetTrigger("Top");
-                    break;
-                case BallCatcher.TeapotLevel.MIDDLE:
-                    mTeapotAnimator.SetTrigger("Mid");
-                    break;
-                case BallCatcher.TeapotLevel.BOTTOM:
-                    mTeapotAnimator.SetTrigger("Bottom");
-                    break;
-            }
+            case BallCatcher.TeapotLevel.TOP:
+                //StartCoroutine(Co_Shake(mTopLevel));
+                mTeapotAnimator.SetTrigger("Top");
+                break;
+            case BallCatcher.TeapotLevel.MIDDLE:
+                mTeapotAnimator.SetTrigger("Mid");
+                break;
+            case BallCatcher.TeapotLevel.BOTTOM:
+                mRotationEnabled = false;
+                mTeapotAnimator.SetTrigger("Bottom");
+                break;
         }
 
         StartCoroutine(Co_Shake(null));
