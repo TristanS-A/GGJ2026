@@ -23,7 +23,7 @@ public class OVRConfig : MonoBehaviour
     void Awake()
     {
         ConnectionManager.instance.OnNewDeviceFound.AddListener(CheckNewDevice);
-        ConnectionManager.instance.OnDeviceConnected.AddListener(ConnectedToOmara);
+        //ConnectionManager.instance.OnDeviceConnected.AddListener(ConnectedToOmara);
 
         ConnectionManager.instance.Init(DeviceState.BLE_STATE, BLEConnectionStyle.SCAN);
         var devices = ConnectionManager.instance.GetDiscoveredDevices();
