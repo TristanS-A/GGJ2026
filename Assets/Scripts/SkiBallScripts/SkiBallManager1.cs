@@ -22,6 +22,13 @@ public class SkiBallManager1 : MonoBehaviour
     [SerializeField, Range(0f, 1f)] private float volume = 0.5f;
     private AudioSource audioSource;
 
+    [Header("Teacup Settings")]
+    [SerializeField] private GameObject mTeacupPrefab;
+    [SerializeField] private Transform mTeacupSpawnPoint;
+
+    private GameObject mCurrentSpawnedCup;
+    private int mBallsThrownThisTurn = 0;
+
     private int mSkiballPoints = 0;
 
     private List<Ball> mBalls = new();
@@ -72,6 +79,7 @@ public class SkiBallManager1 : MonoBehaviour
 
     private void StartSkiball(List<TrayIngredient> ingredients)
     {
+        mBallsThrownThisTurn = 0;
         float offset = 0;
         for (int i = 0; i < ingredients.Count; i++)
         {
@@ -99,6 +107,8 @@ public class SkiBallManager1 : MonoBehaviour
 
     private void HandleNextBall()
     {
+        mBallsThrownThisTurn++;
+
         // Play sound when player misses
         if (mBalls.Count > 0 && !mBalls[0].HasGottenPoints)
         {
@@ -107,6 +117,12 @@ public class SkiBallManager1 : MonoBehaviour
                 audioSource.PlayOneShot(missSound, volume);
             }
             Debug.Log("MISS! No points for this ball.");
+        }
+        
+        // If the player has thrown 2 spawn cup
+        if (mBallsThrownThisTurn == 2 && mTeacupPrefab != null)
+        {
+            mCurrentSpawnedCup = Instantiate(mTeacupPrefab, mTeacupSpawnPoint.position, mTeacupSpawnPoint.rotation);
         }
 
         //Get rid of last thrown ball
@@ -189,6 +205,13 @@ public class SkiBallManager1 : MonoBehaviour
     private IEnumerator Co_DelayNextCustomerTrigger()
     {
         yield return new WaitForSeconds(7);
+
+        // Get rid of teacup
+        if (mCurrentSpawnedCup != null)
+        {
+            Destroy(mCurrentSpawnedCup);
+        }
+
         EventSystem.TriggerNextCustomer();
     }
 }

@@ -205,6 +205,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mScoreValue: 2
+  level: 0
+  ballCaughtEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  scoreSound: {fileID: 0}
+  volume: 0.5
 --- !u!65 &26318978
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -631,6 +637,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mScoreValue: 1
+  level: 0
+  ballCaughtEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  scoreSound: {fileID: 0}
+  volume: 0.5
 --- !u!65 &98135677
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1914,6 +1926,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mScoreValue: 1
+  level: 0
+  ballCaughtEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  scoreSound: {fileID: 0}
+  volume: 0.5
 --- !u!65 &816451685
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2558,6 +2576,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mScoreValue: 2
+  level: 0
+  ballCaughtEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  scoreSound: {fileID: 0}
+  volume: 0.5
 --- !u!1 &894915111
 GameObject:
   m_ObjectHideFlags: 0
@@ -3035,6 +3059,8 @@ MonoBehaviour:
   mMinGoodScore: 2
   mMinMidScore: 1
   mMinBadScore: 0
+  missSound: {fileID: 0}
+  volume: 0.5
 --- !u!1 &1115935041
 GameObject:
   m_ObjectHideFlags: 0
@@ -3631,6 +3657,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mScoreValue: 3
+  level: 0
+  ballCaughtEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  scoreSound: {fileID: 0}
+  volume: 0.5
 --- !u!65 &1367964483
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5160,6 +5192,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mScoreValue: 1
+  level: 0
+  ballCaughtEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  scoreSound: {fileID: 0}
+  volume: 0.5
 --- !u!65 &1718673264
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5885,6 +5923,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mScoreValue: 3
+  level: 0
+  ballCaughtEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  scoreSound: {fileID: 0}
+  volume: 0.5
 --- !u!1 &2027438138
 GameObject:
   m_ObjectHideFlags: 0
@@ -6406,6 +6450,63 @@ Transform:
   - {fileID: 894915114}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &190878069537452247
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1824492232584317553, guid: 169d9042a0177904eaa13c1cb18b2dce, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -19.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1824492232584317553, guid: 169d9042a0177904eaa13c1cb18b2dce, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 1824492232584317553, guid: 169d9042a0177904eaa13c1cb18b2dce, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 42.294
+      objectReference: {fileID: 0}
+    - target: {fileID: 1824492232584317553, guid: 169d9042a0177904eaa13c1cb18b2dce, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1824492232584317553, guid: 169d9042a0177904eaa13c1cb18b2dce, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1824492232584317553, guid: 169d9042a0177904eaa13c1cb18b2dce, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1824492232584317553, guid: 169d9042a0177904eaa13c1cb18b2dce, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1824492232584317553, guid: 169d9042a0177904eaa13c1cb18b2dce, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1824492232584317553, guid: 169d9042a0177904eaa13c1cb18b2dce, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1824492232584317553, guid: 169d9042a0177904eaa13c1cb18b2dce, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6458105817036016451, guid: 169d9042a0177904eaa13c1cb18b2dce, type: 3}
+      propertyPath: m_Name
+      value: TeaCup
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 169d9042a0177904eaa13c1cb18b2dce, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -6420,3 +6521,4 @@ SceneRoots:
   - {fileID: 783616193}
   - {fileID: 221183974}
   - {fileID: 1149454300}
+  - {fileID: 190878069537452247}
