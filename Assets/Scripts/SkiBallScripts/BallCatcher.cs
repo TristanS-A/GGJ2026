@@ -16,6 +16,7 @@ public class BallCatcher : MonoBehaviour
 
     [SerializeField] private int mScoreValue = 1;
     [SerializeField] private BallCatcher.TeapotLevel level;
+    [SerializeField] private GameObject _splash;
 
     [SerializeField] public UnityEvent ballCaughtEvent;
 
@@ -47,6 +48,8 @@ public class BallCatcher : MonoBehaviour
             Debug.Log(mScoreValue);
             ballScript.HasGottenPoints = true;
             EventSystem.AddSkiBallPoints(mScoreValue, level);
+
+            Instantiate(_splash);
 
             ballCaughtEvent?.Invoke();
         }
