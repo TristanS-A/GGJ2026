@@ -7,6 +7,7 @@ public class DialogueBox : MonoBehaviour
 {
     public TextMeshProUGUI textComponent;
     public float textSpeed;
+    public float sentencePauseMultiplier = 2f;
 
     [Header("Audio")]
     [SerializeField] private AudioSource audioSource;
@@ -72,7 +73,15 @@ public class DialogueBox : MonoBehaviour
                     }
                 }
 
-                yield return new WaitForSeconds(textSpeed);
+                if (chars[i] == '.' || chars[i] == '!' || chars[i] == '?' || chars[i] == ',')
+                {
+                    yield return new WaitForSeconds(textSpeed * sentencePauseMultiplier);
+                }
+                else
+                {
+                    yield return new WaitForSeconds(textSpeed);
+                }
+                
             }
         }
     }

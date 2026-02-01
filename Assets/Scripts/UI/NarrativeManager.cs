@@ -13,6 +13,8 @@ public class NarrativeManager : MonoBehaviour
     [SerializeField] float timeBetweenRamblings;
     int rambleIndex;
 
+    Coroutine rambleRoutine;
+
     private void OnEnable()
     {
         EventSystem.OnStartNextOrder += SetNewOrder;
@@ -42,7 +44,12 @@ public class NarrativeManager : MonoBehaviour
         dialogueBox.WriteLine(currentData.orders[currentOrder].requestOrder, currentData.voiceClip);
 
         rambleIndex = 0;
-        Ramble();
+
+        if (rambleRoutine != null)
+        {
+            StopCoroutine(rambleRoutine);
+        }
+        rambleRoutine = StartCoroutine(Ramble());
     }
 
     public void RateOrder(OrderQuality quality)
@@ -75,7 +82,7 @@ public class NarrativeManager : MonoBehaviour
         rambleIndex++;
         if (rambleIndex < currentData.orders[currentOrder].ramblings.Count)
         {
-            Ramble();
+            rambleRoutine = StartCoroutine(Ramble());
         }
         else
         {

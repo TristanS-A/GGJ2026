@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueBox: {fileID: 2993172424065813180}
-  timeBetweenRamblings: 0.05
+  timeBetweenRamblings: 18
 --- !u!1 &5519267076320435608
 GameObject:
   m_ObjectHideFlags: 0
@@ -209,7 +209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 3804512497162248295}
-  textSpeed: 0.05
+  textSpeed: 0.028
   audioSource: {fileID: 700150386958706893}
   typeSound: {fileID: 8300000, guid: 353e91ed80641c24f963aa447fc4fe24, type: 3}
   frequency: 2

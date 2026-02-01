@@ -36,7 +36,8 @@ Transform:
   m_LocalPosition: {x: -11.66, y: 6.41, z: -14.553}
   m_LocalScale: {x: 1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 178198079993920826}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!33 &7585643690722500761
@@ -294,3 +295,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.75, y: 2.5, z: 0.75}
   m_Center: {x: 0.00000005960466, y: 0, z: -0.00000008940697}
+--- !u!1001 &7808639532834054432
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8884902137429556823}
+    m_Modifications:
+    - target: {fileID: 985540772801256561, guid: 7db55eac06439a747ac31b0a68549e1f, type: 3}
+      propertyPath: m_Name
+      value: DustParticle
+      objectReference: {fileID: 0}
+    - target: {fileID: 7936691085111516186, guid: 7db55eac06439a747ac31b0a68549e1f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7936691085111516186, guid: 7db55eac06439a747ac31b0a68549e1f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7936691085111516186, guid: 7db55eac06439a747ac31b0a68549e1f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7db55eac06439a747ac31b0a68549e1f, type: 3}
+--- !u!4 &178198079993920826 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7936691085111516186, guid: 7db55eac06439a747ac31b0a68549e1f, type: 3}
+  m_PrefabInstance: {fileID: 7808639532834054432}
+  m_PrefabAsset: {fileID: 0}
