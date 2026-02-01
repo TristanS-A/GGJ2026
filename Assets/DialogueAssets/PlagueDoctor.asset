@@ -50,12 +50,18 @@ MonoBehaviour:
     rateOrderGood: Heehoo, heeho, yes, yes, yes! I can appreciate this, mmm.
     rateOrderPeak: What. A. Concoction! Oh, yes, my friend. Truly, you are quite
       the alchemist!
-  goodShot:
+  greatShot:
   - The bigger the explosion, the better the alchemist! Or astounding success, in
     your case.
   - 'Yes, this level of precision.... it will do. Very good. Very well. Carry on. '
   - Don't draw too much attention to yourself with all of this success! Haha. ....I'm
     not kidding please do that worse next time
+  goodShot:
+  - Nice nice nice! I will look forward to this one...
+  - Goodie! Just good enough to not draw any attention, of course. Hmmhm.
+  midShot:
+  - You can do better, you know? Yes, just be a teensy bit more careful.... yes.
+  - Well I'd rather it there than not in my tea at all, haha!
   badShot:
   - The bigger the explosion, the better the alchemist! Or horrendous failure, in
     your case.

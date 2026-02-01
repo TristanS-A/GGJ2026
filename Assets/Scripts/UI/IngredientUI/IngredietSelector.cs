@@ -21,6 +21,16 @@ public class IngredietSelector : MonoBehaviour, IPointerEnterHandler, IPointerEx
         SMILING_FLOWER
     }
 
+    private void OnEnable()
+    {
+        EventSystem.OnTriggerNextCustomer += ClearSelection;
+    }
+
+    private void OnDisable()
+    {
+        EventSystem.OnTriggerNextCustomer -= ClearSelection;
+    }
+
     private void Start()
     {
         mImage = GetComponent<Image>();
@@ -67,6 +77,16 @@ public class IngredietSelector : MonoBehaviour, IPointerEnterHandler, IPointerEx
                     IngredientManager.Instance.AddIngredient(mImage.sprite, mIngredientType);
                 }
             }
+        }
+    }
+
+    public void ClearSelection()
+    {
+        if (mSelected)
+        {
+            mSelected = false;
+            mImage.color = new Color(1f, 1, 1f, 1f);
+            IngredientManager.Instance.RemoveIngredient(mIngredientType);
         }
     }
 }

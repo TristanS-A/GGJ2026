@@ -60,6 +60,8 @@ public class Ball : MonoBehaviour
             {
                 mAiming = true;
                 mStartClickPos = Input.mousePosition;
+
+                SkiballLine.instance.StartLine(gameObject);
             }
 
             if (mAiming && Input.GetMouseButtonUp(0))
@@ -83,6 +85,8 @@ public class Ball : MonoBehaviour
                     mAudioSource.PlayOneShot(throwSound, dynamicVolume);
                 }
 
+                SkiballLine.instance.EndLine();
+
                 mReadyToThrow = false;
                 StartCoroutine(Co_Delay());
             }
@@ -105,7 +109,7 @@ public class Ball : MonoBehaviour
 
     private IEnumerator Co_Delay()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(6);
         EventSystem.CompletedBallThrow();
     }
 }

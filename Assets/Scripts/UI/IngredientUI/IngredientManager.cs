@@ -12,6 +12,7 @@ public class IngredientManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI mIngrNameText;
     [SerializeField] private TextMeshProUGUI mIngrDescritptionText;
     [SerializeField] private ScentIngredientHolder[] mScentToIngredients;
+    [SerializeField] private IngredientToScentHolder[] mIngredientsToScent;
     [SerializeField] private IngredientDescriptionHolder[] mIngredientToDescription;
     [SerializeField] private ScentDescriptionHolder[] mScentToDescription;
     private List<TrayIngredient> mCurrIngredients = new();
@@ -19,10 +20,11 @@ public class IngredientManager : MonoBehaviour
     private static IngredientManager instance;
 
     private int mIngredientChoicePoints = 0;
-    private Scent mTargetScent = Scent.Winter;
+    private Scent mTargetScent = Scent.Barnyard;
 
     private Dictionary<Scent, List<IngredietSelector.IngredientType>> mScentToIngredientsMap = new();
     private Dictionary<IngredientType, IngredientDescription> mIngredientToDescriptionMap = new();
+    private Dictionary<IngredientType, Scent> mIngredientsToScentMap = new();
     private Dictionary<Scent, string> mScentToDescriptionMap = new();
 
     public static IngredientManager Instance {  get { return instance; } }
@@ -41,6 +43,13 @@ public class IngredientManager : MonoBehaviour
     {
         public Scent scent;
         public List<IngredietSelector.IngredientType> ingredients;
+    }
+
+    [Serializable]
+    public struct IngredientToScentHolder
+    {
+        public Scent scent;
+        public IngredietSelector.IngredientType ingredient;
     }
 
     [Serializable]
@@ -96,6 +105,11 @@ public class IngredientManager : MonoBehaviour
         {
             mScentToDescriptionMap.Add(mScentToDescription[i].scent, mScentToDescription[i].description);
         }
+
+        for (int i = 0; i < mIngredientsToScent.Length; i++)
+        {
+            mIngredientsToScentMap.Add(mIngredientsToScent[i].ingredient, mIngredientsToScent[i].scent);
+        }
     }
 
     public void SetTargetScent(Scent targetScent)
@@ -112,6 +126,11 @@ public class IngredientManager : MonoBehaviour
         {
             mCurrIngredients.Add(trayIngr);
             trayIngr.SetImageAndType(sprite, ingredientType);
+
+            if (mCurrIngredients.Count == 1)
+            {
+                EventSystem.TriggerCanBrew(true);
+            }
         }
     }
 
@@ -124,6 +143,12 @@ public class IngredientManager : MonoBehaviour
             {
                 Destroy(mCurrIngredients[i].gameObject);
                 mCurrIngredients.RemoveAt(i);
+
+                if (mCurrIngredients.Count == 0)
+                {
+                    EventSystem.TriggerCanBrew(false);
+                }
+
                 return;
             }
         }
@@ -131,8 +156,8 @@ public class IngredientManager : MonoBehaviour
 
     public bool CanAddIngredientToTray()
     {
-        //Does not add more than 3 ingredients to tray
-        return mCurrIngredients.Count < 3;
+        //Does not add more than 2 ingredients to tray
+        return mCurrIngredients.Count < 2;
     }
 
     public void RegisterIngredientChoiceScore()
@@ -160,38 +185,49 @@ public class IngredientManager : MonoBehaviour
     public Scent GetClosestScentAndStrengthOnTray()
     {
         Scent scent = Scent.Winter;
-        int[] scentsCount = new int[Enum.GetValues(typeof(Scent)).Length];
+        int[] ingredientsFreq = new int[Enum.GetValues(typeof(IngredientType)).Length];
 
         foreach (TrayIngredient ingredient in mCurrIngredients)
         {
-            for (int i = 0; i < scentsCount.Length; i++)
-            {
-                if (mScentToIngredientsMap.ContainsKey((Scent)i))
-                {
-                    if (mScentToIngredientsMap[(Scent)i].Contains(ingredient.IngredientType))
-                    {
-                        scentsCount[i]++;
-                    }
-                }
-            }
+            ingredientsFreq[(int)ingredient.IngredientType]++;
         }
 
         int min = -1;
         int index = 0;
-        for (int i = 0; i < scentsCount.Length; i++)
+        for (int i = 0; i < ingredientsFreq.Length; i++)
         {
-            if (scentsCount[i] >= min)
+            if (ingredientsFreq[i] > min)
             {
-                min = scentsCount[i];
+                min = ingredientsFreq[i];
                 index = i;
             }
         }
 
-        return (Scent)index;
+        //for (int i = 0; i < scentsCount.Length; i++)
+        //{
+        //    if (mScentToIngredientsMap.ContainsKey((Scent)i))
+        //    {
+        //        if (mScentToIngredientsMap[(Scent)i].Contains(ingredient.IngredientType))
+        //        {
+        //            scentsCount[i]++;
+        //        }
+        //    }
+        //}
+
+        return mIngredientsToScentMap[(IngredientType)index];
     }
 
     public string GetScentDescription(Scent scent)
     {
         return mScentToDescriptionMap[scent];
+    }
+
+    public void ResetTray()
+    {
+        for (int i = 0; i < mCurrIngredients.Count; i++)
+        {
+            RemoveIngredient(mCurrIngredients[i].IngredientType);
+            i--;
+        }
     }
 }

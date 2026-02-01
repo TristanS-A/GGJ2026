@@ -45,10 +45,16 @@ MonoBehaviour:
     rateOrderMid: Mmmmmmm-hm. The taste 'a the Range.
     rateOrderGood: Hooooo-ee, that's good. Oh yeah.
     rateOrderPeak: This is the STUFF! Can I getta barrel ofit t' go?
-  goodShot:
-  - Good shootin'!
+  greatShot:
+  - Right on target!
   - Dead center!
   - A frontier legend!
+  goodShot:
+  - Good shootin'!
+  - Yee-ho! That's good.
+  midShot:
+  - Maybe turn it on and off again?
+  - Well, 'least it went in there.
   badShot:
   - Think that'll richochet?
   - What're you shootin' for, my circuits?
