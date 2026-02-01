@@ -88,5 +88,6 @@ public class TrayHandler : MonoBehaviour
     private void SetBrewButtonEnabled(bool enabled)
     {
         mBrewButton.gameObject.SetActive(enabled);
+        mSmellTestButton.gameObject.SetActive(enabled);
     }
 }
