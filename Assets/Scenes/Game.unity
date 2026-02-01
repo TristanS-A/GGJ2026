@@ -4595,6 +4595,9 @@ MonoBehaviour:
   OnNewDeviceFound:
     m_PersistentCalls:
       m_Calls: []
+  OnDeviceConnected:
+    m_PersistentCalls:
+      m_Calls: []
   OnDeviceReadyStateChanged:
     m_PersistentCalls:
       m_Calls: []

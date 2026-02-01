@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8681544881097105416}
   - component: {fileID: 7363440766352488052}
   - component: {fileID: 221321381338222037}
+  - component: {fileID: 3294101536082177634}
   m_Layer: 5
   m_Name: NarrativeCanvas
   m_TagString: Untagged
@@ -117,6 +118,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueBox: {fileID: 2993172424065813180}
   timeBetweenRamblings: 18
+--- !u!114 &3294101536082177634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786594528770535940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b68bd2b21885a5d42a40cf451f528df2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 0.2
 --- !u!1 &5519267076320435608
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,6 +224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 3804512497162248295}
   textSpeed: 0.028
+  sentencePauseMultiplier: 2
   audioSource: {fileID: 700150386958706893}
   typeSound: {fileID: 8300000, guid: 353e91ed80641c24f963aa447fc4fe24, type: 3}
   frequency: 2
