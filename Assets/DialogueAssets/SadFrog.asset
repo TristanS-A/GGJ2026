@@ -15,23 +15,23 @@ MonoBehaviour:
   orders:
   - orderScent: 6
     requestOrder: Oh... you're here. Do you... serve tea? I guess I can have some.
-      Do you have anything... um... <color="blue">blue</color>?
+      Do you have anything... um... <color=#00ffffff>blue</color>?
     ramblings:
-    - You know. <color="blue">Blue</color>. Like... have you ever seen those videos...
+    - You know. <color=#00ffffff>Blue</color>. Like... have you ever seen those videos...
       of the rain... being... sad?
     - I watch lots of... videos. The audio quality is like... rain from a gutter...
-      because of my... teeth. They're also <color="blue">blue</color>.
-    - The forecast today said it was going to rain towards the <color="blue">blue</color>
-      moon. But it's raining towards the <color="blue">Tblue</color> sun. Awww...
-    - Some people... don't really like <color=blue">blue</color>. But, I am <color=blue">blue</color>.
-      The rain's <color=blue">blue</color>. My teeth are <color=blue">blue</color>.
-      You just gotta have <color=blue">blue</color> sometimes.
+      because of my... teeth. They're also <color=#00ffffff>blue</color>.
+    - The forecast today said it was going to rain towards the <color=#00ffffff>blue</color>
+      moon. But it's raining towards the <color=#00ffffff>blue</color> sun. Awww...
+    - Some people... don't really like <color=#00ffffff>blue</color>. But, I am <color=#00ffffff>blue</color>.
+      The rain's <color=#00ffffff>blue</color>. My teeth are <color=#00ffffff>blue</color>.
+      You just gotta have <color=#00ffffff>blue</color> sometimes.
     rateOrderBad: Oh... this makes me feel... <color=red">red</color>.
     rateOrderMid: Ahm.... mmm... I feel... <color=yellow">yellow</color>,. That's
       different.
     rateOrderGood: Oh, this is nice. I'm feeling... <color=green">Green</color>.
       It's not easy, being <color=green">green</color>.
-    rateOrderPeak: <color=blue">Blue</color>. It's so... <color=blue">blue</color>.
+    rateOrderPeak: <color=#00ffffff>Blue</color>. It's so... <color=#00ffffff>blue</color>.
       Thank you.
   - orderScent: 5
     requestOrder: Hey... it's you. ...I need friends. ...Do you have any tea that
