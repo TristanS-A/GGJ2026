@@ -72,6 +72,8 @@ public class SkiBallManager : MonoBehaviour
         //All balls throw
         if (mBalls.Count == 0)
         {
+            Debug.Log("FINAL SKI Score: " + mSkiballPoints);
+            Debug.Log("FINAL INgredientChoise: " + IngredientManager.Instance.IngredientChoicePoints);
             //Signify serve tea
             int finalScore = mSkiballPoints * IngredientManager.Instance.IngredientChoicePoints;
 
@@ -94,8 +96,9 @@ public class SkiBallManager : MonoBehaviour
 
             EventSystem.RateOrder(orderQuality);
             StartCoroutine(Co_DelayNextCustomerTrigger());
-            Debug.Log(finalScore);
+            Debug.Log("FINAL: " + finalScore);
             EventSystem.AddTotalBrewPoints(finalScore);
+            mSkiballPoints = 0;
             return;
         }
 
@@ -104,7 +107,7 @@ public class SkiBallManager : MonoBehaviour
         mBalls[0].SetReadyToThrow();
     }
 
-    private void AddPoints(int pointsToAdd)
+    private void AddPoints(int pointsToAdd, BallCatcher.TeapotLevel level)
     {
         if (pointsToAdd >= 2)
         {
