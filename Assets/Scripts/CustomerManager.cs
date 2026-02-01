@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,6 +13,8 @@ public class CustomerManager : MonoBehaviour
     private int mPrevCustomerIndex = 0;
     private int mPrevPrevCustomerIndex = 0;
 
+    private GameObject mCurrCustomer;
+
     private void OnEnable()
     {
         EventSystem.OnTriggerNextCustomer += StartNextOrder;
@@ -24,6 +27,18 @@ public class CustomerManager : MonoBehaviour
 
     private void StartNextOrder()
     {
+        StartCoroutine(Co_HandleNextCustomer(2));
+    }
+
+    private IEnumerator Co_HandleNextCustomer(float delay)
+    {
+        if (mCurrCustomer != null)
+        {
+            mCurrCustomer.GetComponentInChildren<CharacterHead>().StartSlide(false);
+        }
+
+        yield return new WaitForSeconds(delay);
+
         mCurrCustomerIndex = UnityEngine.Random.Range(0, mCustomers.Length);
 
         while (mCurrCustomerIndex == mPrevCustomerIndex || mCurrCustomerIndex == mPrevPrevCustomerIndex)
@@ -56,6 +71,12 @@ public class CustomerManager : MonoBehaviour
                 mPrevOrders.Add(mCurrCustomerIndex, orderIndex);
             }
         }
+
+        if (mCustomers[mCurrCustomerIndex].characterOBJ)
+        {
+            mCurrCustomer = Instantiate(mCustomers[mCurrCustomerIndex].characterOBJ);
+        }
+
         Debug.Log(mCurrCustomerIndex);
         EventSystem.StartNextOrder(mCustomers[mCurrCustomerIndex], orderIndex);
 
@@ -68,6 +89,6 @@ public class CustomerManager : MonoBehaviour
 
     private void Start()
     {
-        StartNextOrder();
+        StartCoroutine(Co_HandleNextCustomer(0));
     }
 }

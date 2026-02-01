@@ -70,3 +70,4 @@ MonoBehaviour:
   - Oh, that was just the wrong ingredient. I'm sure you didn't actually want that
     in there? Yes? Yes! Yes.
   voiceClip: {fileID: 8300000, guid: 353e91ed80641c24f963aa447fc4fe24, type: 3}
+  characterOBJ: {fileID: 7749679631374278176, guid: 963260a9824b25a4682824db8610058e, type: 3}

@@ -28,4 +28,5 @@ public class NPCDialogueData : ScriptableObject
     [SerializeField] public List<string> midShot;
     [SerializeField] public List<string> badShot;
     [SerializeField] public AudioClip voiceClip;
+    [SerializeField] public GameObject characterOBJ;
 }
