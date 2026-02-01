@@ -24,7 +24,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Albedo:
-        m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+        m_Texture: {fileID: 2800000, guid: 1673c1c5bbe5a8440a97252c74b7d262, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -48,15 +48,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Detail_Mask:
-        m_Texture: {fileID: 2800000, guid: 7b1abe4b529fd4e42958d3812e2026e7, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Texture: {fileID: 2800000, guid: 5f6cef45664faab41a880610f5563a5b, type: 3}
+        m_Scale: {x: 3, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Dissolve:
         m_Texture: {fileID: 2800000, guid: 457e031d85c5b9248bbd2b31f33e1f35, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Distortion:
-        m_Texture: {fileID: 2800000, guid: 05889b7f26740c742b6d69484817f448, type: 3}
+        m_Texture: {fileID: 2800000, guid: af29d4dffa0bd4346b04324e510a3327, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -99,7 +99,7 @@ Material:
     m_Floats:
     - _AlphaClip: 0
     - _AlphaToMask: 0
-    - _Alpha_Feather: -2.2
+    - _Alpha_Feather: 0
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
@@ -109,9 +109,9 @@ Material:
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
-    - _Detail_Opacity: 0.15
+    - _Detail_Opacity: 0.23
     - _Dissolve_Opacity: 0
-    - _Distortion_Amount: 0.1
+    - _Distortion_Amount: 0.062
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
@@ -137,9 +137,9 @@ Material:
     - _Albedo_Speed: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Detail_Speed: {r: 0, g: 0, b: 0, a: 0}
+    - _Detail_Speed: {r: 0, g: 0.7, b: 0, a: 0}
     - _Dissolve_Speed: {r: 0, g: 0, b: 0, a: 0}
-    - _Distortion_Speed: {r: 0, g: 0, b: 0, a: 0}
+    - _Distortion_Speed: {r: 0, g: 0.5, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
