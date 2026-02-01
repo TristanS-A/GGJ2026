@@ -129,6 +129,11 @@ public class IngredientManager : MonoBehaviour
         {
             mCurrIngredients.Add(trayIngr);
             trayIngr.SetImageAndType(sprite, ingredientType);
+
+            if (mCurrIngredients.Count == 1)
+            {
+                EventSystem.TriggerCanBrew(true);
+            }
         }
     }
 
@@ -141,6 +146,12 @@ public class IngredientManager : MonoBehaviour
             {
                 Destroy(mCurrIngredients[i].gameObject);
                 mCurrIngredients.RemoveAt(i);
+
+                if (mCurrIngredients.Count == 0)
+                {
+                    EventSystem.TriggerCanBrew(false);
+                }
+
                 return;
             }
         }
@@ -148,8 +159,8 @@ public class IngredientManager : MonoBehaviour
 
     public bool CanAddIngredientToTray()
     {
-        //Does not add more than 3 ingredients to tray
-        return mCurrIngredients.Count < 3;
+        //Does not add more than 2 ingredients to tray
+        return mCurrIngredients.Count < 2;
     }
 
     public void RegisterIngredientChoiceScore()

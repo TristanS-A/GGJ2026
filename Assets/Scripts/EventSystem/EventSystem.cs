@@ -12,8 +12,8 @@ public static class EventSystem
     public static UnityAction OnCompletedBallThrow;
     public static void CompletedBallThrow() { OnCompletedBallThrow?.Invoke(); }
 
-    public static UnityAction<int> OnAddSkiballPoints;
-    public static void AddSkiBallPoints(int pointsToAdd) { OnAddSkiballPoints?.Invoke(pointsToAdd); }
+    public static UnityAction<int, BallCatcher.TeapotLevel> OnAddSkiballPoints;
+    public static void AddSkiBallPoints(int pointsToAdd, BallCatcher.TeapotLevel level) { OnAddSkiballPoints?.Invoke(pointsToAdd, level); }
 
     public static UnityAction<int> OnAddTotalBrewPoints;
     public static void AddTotalBrewPoints(int pointsToAdd) { OnAddTotalBrewPoints?.Invoke(pointsToAdd); }
@@ -29,4 +29,7 @@ public static class EventSystem
 
     public static UnityAction OnTriggerNextCustomer;
     public static void TriggerNextCustomer() { OnTriggerNextCustomer?.Invoke(); }
+
+    public static UnityAction<bool> OnTriggerCanBrew;
+    public static void TriggerCanBrew(bool canBrew) { OnTriggerCanBrew?.Invoke(canBrew); }
 }

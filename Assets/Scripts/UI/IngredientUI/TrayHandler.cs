@@ -27,11 +27,22 @@ public class TrayHandler : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        EventSystem.OnTriggerCanBrew += SetBrewButtonEnabled;
+    }
+
+    private void OnDisable()
+    {
+        EventSystem.OnTriggerCanBrew -= SetBrewButtonEnabled;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         mBrewButton.onClick.AddListener(Brew);
         mSmellTestButton.onClick.AddListener(SmellTest);
+        mBrewButton.gameObject.SetActive(false);
     }
 
     private void Brew()
@@ -72,5 +83,10 @@ public class TrayHandler : MonoBehaviour
         EventSystem.SlideOutUI(UISlideOut.UIType.SCENT_DESCRIPTION, false);
         //mOmara.transform.position = mOmara.transform.position + Vector3.up * -30;
         mOmara.StopScent();
+    }
+
+    private void SetBrewButtonEnabled(bool enabled)
+    {
+        mBrewButton.gameObject.SetActive(enabled);
     }
 }
