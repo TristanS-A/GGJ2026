@@ -19,12 +19,15 @@ public class SkiBallManager1 : MonoBehaviour
 
     [Header("Audio Settings")]
     [SerializeField] private AudioClip missSound;
+    [SerializeField] private AudioClip removeTeaSound;
     [SerializeField, Range(0f, 1f)] private float volume = 0.5f;
     private AudioSource audioSource;
 
     [Header("Teacup Settings")]
     [SerializeField] private GameObject mTeacupPrefab;
     [SerializeField] private Transform mTeacupSpawnPoint;
+    [SerializeField] private Transform mParticleSpawnPoint;
+    [SerializeField] private GameObject mParticleSystem;
 
     private GameObject mCurrentSpawnedCup;
     private int mBallsThrownThisTurn = 0;
@@ -206,12 +209,16 @@ public class SkiBallManager1 : MonoBehaviour
     {
         yield return new WaitForSeconds(7);
 
-        // Get rid of teacup
         if (mCurrentSpawnedCup != null)
         {
+            Instantiate(mParticleSystem, mParticleSpawnPoint.position, mParticleSpawnPoint.rotation);
+
+            if (removeTeaSound != null) audioSource.PlayOneShot(removeTeaSound, volume);
+
             Destroy(mCurrentSpawnedCup);
         }
 
         EventSystem.TriggerNextCustomer();
     }
+
 }
