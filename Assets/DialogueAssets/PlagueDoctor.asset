@@ -69,5 +69,5 @@ MonoBehaviour:
     your failure, is what I'm talking about. Yes, hmm.
   - Oh, that was just the wrong ingredient. I'm sure you didn't actually want that
     in there? Yes? Yes! Yes.
-  voiceClip: {fileID: 8300000, guid: 353e91ed80641c24f963aa447fc4fe24, type: 3}
+  voiceClip: {fileID: 8300000, guid: 15685d1461df0654d9b8abbbc1d6fe15, type: 3}
   characterOBJ: {fileID: 6474139414916072069, guid: 41e16e864aba2cb45a4ea941fc9a8d81, type: 3}
