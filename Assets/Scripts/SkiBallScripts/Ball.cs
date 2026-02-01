@@ -11,13 +11,16 @@ public class Ball : MonoBehaviour
 
     [Header("Audio")]
     [SerializeField] private AudioClip throwSound;
+    [SerializeField] private AudioClip rollingSound;
     [Range(0, 6)][SerializeField] private float volume = 0.5f;
+    [SerializeField] private float rollVolumeMultiplier = 0.5f;
 
     private Vector3 mStartClickPos = Vector3.zero;
     private Vector3 mThrowDirection = Vector3.zero;
 
     private Rigidbody mRB;
     private AudioSource mAudioSource;
+    private AudioSource mRollSource;
 
     private bool mAiming = false;
 
@@ -26,6 +29,7 @@ public class Ball : MonoBehaviour
 
     private bool mReadyToThrow = false;
     private bool mHasGottenPoints = false;
+    private bool mIsTouchingGround = false;
 
     private IngredietSelector.IngredientType mType;
 
@@ -49,11 +53,17 @@ public class Ball : MonoBehaviour
     {
         mRB = GetComponent<Rigidbody>();
         mAudioSource = GetComponent<AudioSource>();
+        mRollSource = gameObject.AddComponent<AudioSource>();
+        mRollSource.clip = rollingSound;
+        mRollSource.loop = true;
+        mRollSource.playOnAwake = false;
+        mRollSource.spatialBlend = 0f;
     }
 
     // Update is called once per frame
     void Update()
     {
+        HandleRollingSound();
         if (mReadyToThrow)
         {
             if (Input.GetMouseButtonDown(0))
@@ -105,6 +115,38 @@ public class Ball : MonoBehaviour
         //    EventSystem.SlideOutUI(UISlideOut.UIType.TRAY, t1);
         //    t1 = !t1;
         //}
+    }
+
+
+    private void HandleRollingSound()
+    {
+        if (rollingSound == null) return;
+
+        // Play sound if on ground
+        if (mIsTouchingGround && mRB.velocity.magnitude > 0.1f)
+        {
+            if (!mRollSource.isPlaying) mRollSource.Play();
+
+            mRollSource.pitch = Mathf.Clamp(mRB.velocity.magnitude * 0.2f, 0.8f, 1.2f);
+            mRollSource.volume = Mathf.Clamp(mRB.velocity.magnitude * 0.1f, 0, 1.0f) * rollVolumeMultiplier * volume;
+        }
+        else
+        {
+            if (mRollSource.isPlaying) mRollSource.Stop();
+        }
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("RampSlide"))
+        {
+            mIsTouchingGround = true;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        mIsTouchingGround = false;
     }
 
     private IEnumerator Co_Delay()

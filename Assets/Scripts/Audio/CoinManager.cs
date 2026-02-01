@@ -23,11 +23,11 @@ public class CoinManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
             //SpawnCoin();
-            StartCoroutine(SpawnCoinsDelayed(10));
-        }
+        //    StartCoroutine(SpawnCoinsDelayed(10));
+        //}
     }
 
     public void SpawnCoin()

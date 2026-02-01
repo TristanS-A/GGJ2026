@@ -14,6 +14,11 @@ public class SkiBallManager : MonoBehaviour
     [SerializeField] private int mMinMidScore = 1;
     [SerializeField] private int mMinBadScore = 0;
 
+    [Header("Audio Settings")]
+    [SerializeField] private AudioClip missSound;
+    [SerializeField, Range(0f, 1f)] private float volume = 0.5f;
+    private AudioSource audioSource;
+
     private int mSkiballPoints = 0;
 
     private List<Ball> mBalls = new();
@@ -21,6 +26,15 @@ public class SkiBallManager : MonoBehaviour
     private IngredietSelector.IngredientType mIngredietType;
 
     public IngredietSelector.IngredientType IngredientType {  get { return mIngredietType; } }
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+    }
 
     private void OnEnable()
     {
@@ -65,6 +79,16 @@ public class SkiBallManager : MonoBehaviour
 
     private void HandleNextBall()
     {
+        // Play sound when player misses
+        if (mBalls.Count > 0 && !mBalls[0].HasGottenPoints)
+        {
+            if (missSound != null)
+            {
+                audioSource.PlayOneShot(missSound, volume);
+            }
+            Debug.Log("MISS! No points for this ball.");
+        }
+
         //Get rid of last thrown ball
         Destroy(mBalls[0].gameObject);
         mBalls.RemoveAt(0);

@@ -153,7 +153,9 @@ MonoBehaviour:
   mThrowScaler: 0.4
   mSlidePlaneT: {fileID: 0}
   throwSound: {fileID: 8300000, guid: 6e9d9190188054f439bac55cd4c31051, type: 3}
+  rollingSound: {fileID: 8300000, guid: c368516b40e272542bec7e8b3b1c115f, type: 3}
   volume: 6
+  rollVolumeMultiplier: 0.5
 --- !u!82 &4537685437464902593
 AudioSource:
   m_ObjectHideFlags: 0

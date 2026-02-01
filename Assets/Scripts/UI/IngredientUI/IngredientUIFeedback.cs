@@ -42,7 +42,7 @@ public class IngredientUIFeedback : MonoBehaviour, IPointerEnterHandler, IPointe
     public void OnPointerClick(PointerEventData eventData)
     {
         int currentCount = IngredientManager.Instance.TrayIngredients.Count;
-        bool isCurrentlyFull = currentCount >= 3;
+        bool isCurrentlyFull = currentCount >= 2;
 
         if (!isCurrentlyFull)
         {
