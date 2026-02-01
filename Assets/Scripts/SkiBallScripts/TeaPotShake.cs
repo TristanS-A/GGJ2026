@@ -37,25 +37,27 @@ public class TeaPotShake : MonoBehaviour
     public void ShakeLevel(int points, BallCatcher.TeapotLevel levelToShake)
     {
         Debug.Log(levelToShake);
-        mRotationEnabled = false;
 
         if (mTeapotAnimator != null)
         {
             mTeapotAnimator.enabled = true;
         }
+        mRotationEnabled = false;
 
-        switch (levelToShake)
         {
-            case BallCatcher.TeapotLevel.TOP:
-                //StartCoroutine(Co_Shake(mTopLevel));
-                mTeapotAnimator.SetTrigger("Top");
-                break;
-            case BallCatcher.TeapotLevel.MIDDLE:
-                mTeapotAnimator.SetTrigger("Mid");
-                break;
-            case BallCatcher.TeapotLevel.BOTTOM:
-                mTeapotAnimator.SetTrigger("Bottom");
-                break;
+            switch (levelToShake)
+            {
+                case BallCatcher.TeapotLevel.TOP:
+                    //StartCoroutine(Co_Shake(mTopLevel));
+                    mTeapotAnimator.SetTrigger("Top");
+                    break;
+                case BallCatcher.TeapotLevel.MIDDLE:
+                    mTeapotAnimator.SetTrigger("Mid");
+                    break;
+                case BallCatcher.TeapotLevel.BOTTOM:
+                    mTeapotAnimator.SetTrigger("Bottom");
+                    break;
+            }
         }
 
         StartCoroutine(Co_Shake(null));
@@ -88,9 +90,9 @@ public class TeaPotShake : MonoBehaviour
         //transform.localPosition = originalPos;
     }
 
-    private void LateUpdate()
+    private void Update()
     {
-        if (mRotationEnabled || mLevel == BallCatcher.TeapotLevel.BOTTOM)
+        if (mRotationEnabled)
         {
             transform.localEulerAngles = new Vector3(0, ((mRotationCurve.Evaluate(mCurrTime) * 2 - 1f) * mRotationRange) + mRotationOfffset, 0);
             mCurrTime += Time.deltaTime * mRotationSpeed;

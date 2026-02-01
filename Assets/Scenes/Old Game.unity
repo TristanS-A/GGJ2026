@@ -1314,43 +1314,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 32adde0c73b588f45aeed17db05b25d4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.350003
+      value: 11.9
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 32adde0c73b588f45aeed17db05b25d4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.8888311
+      value: -4.31
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 32adde0c73b588f45aeed17db05b25d4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.36196
+      value: 12.01
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 32adde0c73b588f45aeed17db05b25d4, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.70347446
+      value: 0.49220353
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 32adde0c73b588f45aeed17db05b25d4, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.07158036
+      value: 0.050082985
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 32adde0c73b588f45aeed17db05b25d4, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.70347446
+      value: -0.86457396
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 32adde0c73b588f45aeed17db05b25d4, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.07158036
+      value: -0.08797265
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 32adde0c73b588f45aeed17db05b25d4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -5.901
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 32adde0c73b588f45aeed17db05b25d4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -90
+      value: -120.176
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 32adde0c73b588f45aeed17db05b25d4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -10.028
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 32adde0c73b588f45aeed17db05b25d4, type: 3}
       propertyPath: m_Name
@@ -1757,12 +1757,39 @@ MonoBehaviour:
   mTeapotAnimator: {fileID: 554657406}
   mTotalShakeTime: 1.5
   mShakeStrength: 0.3
-  mRotationSpeed: 1
+  mRotationSpeed: 0.2
   mRotationRange: 50
-  mRotationOfffset: 0
+  mRotationOfffset: -90
   mRotationCurve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0.261263
+      outSlope: 0.261263
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.35353538
+    - serializedVersion: 3
+      time: 0.49999997
+      value: 1
+      inSlope: 0.00000011920929
+      outSlope: 0.00000011920929
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -0.50746703
+      outSlope: -0.50746703
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.115151405
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -1780,7 +1807,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 0868a7566a471ae4eb83322058f81b3f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -3383,12 +3410,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1010038708}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acdaded1d5511094c87f8498c676d799, type: 3}
+  m_Script: {fileID: 11500000, guid: 9fc54c8e183064448a9d476d89f438fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mSkiballStartT: {fileID: 1813840030}
   mSkiballRackT: {fileID: 1502957812}
-  mRackBallOffset: 2
+  mRackBallOffset: 5
   mIngredientsToSkiBall:
   - ingredientType: 0
     ballObject: {fileID: 557341665518075496, guid: 55d60dbf9f1e58445867009ed8d67a0b, type: 3}
@@ -3407,7 +3434,7 @@ MonoBehaviour:
   mMinMidScore: 1
   mMinBadScore: 0
   missSound: {fileID: 8300000, guid: f994e6eeb5de02543abff5f120004a7f, type: 3}
-  volume: 1
+  volume: 0.5
   mTeacupPrefab: {fileID: 6458105817036016451, guid: 169d9042a0177904eaa13c1cb18b2dce, type: 3}
   mTeacupSpawnPoint: {fileID: 782761695}
 --- !u!1 &1115935041
@@ -4735,6 +4762,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnNewDeviceFound:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeviceConnected:
     m_PersistentCalls:
       m_Calls: []
   OnDeviceReadyStateChanged:
@@ -7355,8 +7385,5 @@ SceneRoots:
   - {fileID: 1595045868}
   - {fileID: 1454282516}
   - {fileID: 8303739098267449724}
-<<<<<<< HEAD:Assets/Scenes/Old Game.unity
   - {fileID: 814910838}
-=======
   - {fileID: 782761695}
->>>>>>> d21561dc744d080dbbba4143bda9c9ce4efd5622:Assets/Scenes/Game.unity
