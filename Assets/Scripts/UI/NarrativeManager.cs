@@ -63,16 +63,16 @@ public class NarrativeManager : MonoBehaviour
         switch (quality)
         {
             case OrderQuality.Bad:
-                dialogueBox.WriteLine(currentData.orders[currentOrder].rateOrderBad);
+                dialogueBox.WriteLine(currentData.orders[currentOrder].rateOrderBad, currentData.voiceClip);
                 break;
             case OrderQuality.Mid:
-                dialogueBox.WriteLine(currentData.orders[currentOrder].rateOrderMid);
+                dialogueBox.WriteLine(currentData.orders[currentOrder].rateOrderMid, currentData.voiceClip);
                 break;
             case OrderQuality.Good:
-                dialogueBox.WriteLine(currentData.orders[currentOrder].rateOrderGood);
+                dialogueBox.WriteLine(currentData.orders[currentOrder].rateOrderGood, currentData.voiceClip);
                 break;
             case OrderQuality.Peak:
-                dialogueBox.WriteLine(currentData.orders[currentOrder].rateOrderPeak);
+                dialogueBox.WriteLine(currentData.orders[currentOrder].rateOrderPeak, currentData.voiceClip);
                 break;
         }
         //dialogueBox.WriteLine(text, currentData.voiceClip);
@@ -82,7 +82,7 @@ public class NarrativeManager : MonoBehaviour
     {
         yield return new WaitForSeconds(timeBetweenRamblings);
 
-        dialogueBox.WriteLine(currentData.orders[currentOrder].ramblings[rambleIndex]);
+        dialogueBox.WriteLine(currentData.orders[currentOrder].ramblings[rambleIndex], currentData.voiceClip);
 
         rambleIndex++;
         if (rambleIndex < currentData.orders[currentOrder].ramblings.Count)
@@ -100,11 +100,11 @@ public class NarrativeManager : MonoBehaviour
     {
         if (goodShot)
         {
-            dialogueBox.WriteLine(currentData.goodShot[Random.Range(0, currentData.goodShot.Count)]);
+            dialogueBox.WriteLine(currentData.goodShot[Random.Range(0, currentData.goodShot.Count)], currentData.voiceClip);
         }
         else
         {
-            dialogueBox.WriteLine(currentData.badShot[Random.Range(0, currentData.badShot.Count)]);
+            dialogueBox.WriteLine(currentData.badShot[Random.Range(0, currentData.badShot.Count)], currentData.voiceClip);
         }
     }
 }

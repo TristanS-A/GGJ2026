@@ -71,6 +71,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 2100000, guid: 27941b9ced13be74d960ea79d8200f61, type: 2}
   - {fileID: 2100000, guid: de22b2a052936df4c83a98ae44b0b4a6, type: 2}
+  - {fileID: 2100000, guid: 57d0393956d71f14a85ceac427a2611a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -423,7 +424,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 0.47058824}
+      key0: {r: 1, g: 0.95093346, b: 0, a: 0.47058824}
       key1: {r: 1, g: 1, b: 1, a: 0}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
